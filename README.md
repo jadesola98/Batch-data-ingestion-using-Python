@@ -6,9 +6,9 @@ The second part of this project involves dockerizing the data ingestion script. 
 
 
 ## Tools
-Docker
-Postgtes
-Python
+* Docker
+* Postgtes
+* Python
 
 
 
