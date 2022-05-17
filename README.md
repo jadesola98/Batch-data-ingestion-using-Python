@@ -14,11 +14,11 @@ The second part of this project involves dockerizing the data ingestion script. 
 
 ## Running Postgres with Docker
 
-## Pull postgres image
+#### Pull postgres image
 ```bash
 Docker pull postgres
 ```
-## Run postgres image with the required parameters
+#### Run postgres image with the required parameters
 ```bash
 docker run -it \
   -e POSTGRES_USER=myusername \
