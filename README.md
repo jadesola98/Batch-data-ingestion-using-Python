@@ -33,7 +33,7 @@ docker run -it \
 Now we have our postgres running
 
 
-#### Running pgadmin on docker
+## Running pgadmin on docker
 
 #### Pull pgadmin image
 ```bash
@@ -59,7 +59,7 @@ docker network create pg-network
 ```
 After this we run both pgadmin and postgres images with the network
 
-### Running Postgres and pgAdmin together
+## Running Postgres and pgAdmin together
 
 Run Postgres (change the path)
 
@@ -95,7 +95,7 @@ Pgcli -h hostname -p port -u username -d database
 
 
 
-### Data ingestion
+## Data ingestion
 
 #### download the csv into current working directory from this site
 ```bash
