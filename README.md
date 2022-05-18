@@ -51,6 +51,7 @@ docker run -it \
 
 
 We can use pgadmin or pgcli to access our Postgres.
+
 To access our postgres using pgadmin we need to create a docker network, this enables Postgres to connect to pgadmin. 
 
 We can create one by running:
@@ -103,7 +104,7 @@ Pgcli -h hostname -p port -u username -d database
 ```
 
 
-#### Ingesting data from csv into postgres using jupyter notebook
+## Ingesting data from csv into postgres using jupyter notebook
 * Read the already downloaded csv file
 * Inspect the data
 * Perform minor transformations such as changing the date column that was in text to time stamp
@@ -139,7 +140,7 @@ docker run -it \
 * Create a docker compose yaml file containing the configurations for both the postgres and pgadmin
 
    N.B: because we are running it together as a docker compose there will be no need to create a network because one will be created automatically.
-   
+
 * Run docker-compose up in the same directory.
       Now we have both postgres and pgadmin
 
