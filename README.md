@@ -33,13 +33,13 @@ docker run -it \
 Now we have our postgres running
 
 
-## Running pgadmin on docker
+## Running Pgadmin with Docker
 
 #### Pull pgadmin image
 ```bash
 Docker pull dpage/pgadmin4
 ```
-#### Running pgadmin image with the required parameters
+#### Run pgadmin image with the required parameters
 ```bash
 docker run -it \
   -e PGADMIN_DEFAULT_EMAIL="admin@admin.com" \
@@ -59,9 +59,9 @@ docker network create pg-network
 ```
 After this we run both pgadmin and postgres images with the network
 
-## Running Postgres and pgAdmin together
+## Running Postgres and PgAdmin together
 
-Run Postgres (change the path)
+Run Postgres
 
 ```bash
 docker run -it \
@@ -88,7 +88,7 @@ docker run -it \
 ```
 Now we can access postgres using pgadmin via the web on port 8080
 
-To access postgres using pgcli run this command:
+To access postgres using pgcli run this command on your command prompt:
 ```bash
 Pgcli -h hostname -p port -u username -d database
 ```
@@ -99,7 +99,7 @@ Pgcli -h hostname -p port -u username -d database
 
 #### download the csv into current working directory from this site
 ```bash
-URL="https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2021-01.csv"
+"https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2021-01.csv"
 ```
 
 
