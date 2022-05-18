@@ -137,8 +137,10 @@ docker run -it \
 
 ## Running Postgres and Pgadmin with docker-compose
 * Create a docker compose yaml file containing the configurations for both the postgres and pgadmin
- N.B: because we are running it together as a docker compose there will be no need to create a network because one will be created automatically.
-*Run docker-compose up in the same directory.
+
+   N.B: because we are running it together as a docker compose there will be no need to create a network because one will be created automatically.
+   
+* Run docker-compose up in the same directory.
       Now we have both postgres and pgadmin
 
 
