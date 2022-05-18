@@ -111,5 +111,30 @@ Pgcli -h hostname -p port -u username -d database
 * Because the data is very large ingest it in chunks into the database
 
 
+## Dockering data ingestion script(Ingest data from csv into postgres using docker)
+* Converted my data ingestion jupyter notebook(upload-data.ipynb) to a script(ingest_data.py) using:
+```bash
+jupyter nbconvert –to=script upload-data.ipynb
+```
+* Create a dockerfile on which docker will build the image for data ingestion (dockerfile)
+* To build the docker image Run:
+```bash
+docker build -t nameyouwishtogiveyourimage (taxi_ingest:v001)
+```
+* To run the container for the image run:
+```bash
+docker run -it \
+  --network=pg-network \
+  taxi_ingest:v001 \
+    --user=root \
+    --password=root \
+    --host=pg-database \
+    --port=5432 \
+    --db=ny_taxi \
+    --table_name=yellow_taxi_trips \
+    --url=${URL}
+```
+
+
 
 
