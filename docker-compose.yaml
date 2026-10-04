@@ -1,0 +1,36 @@
+services:
+  pgdatabase:
+    image: postgres:16
+    env_file: .env
+    volumes:
+      - ny_taxi_postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      # The ingest service waits until Postgres is actually accepting connections
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  pgadmin:
+    image: dpage/pgadmin4
+    env_file: .env
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    ports:
+      - "8080:80"
+
+  ingest:
+    build: .
+    env_file: .env
+    environment:
+      POSTGRES_HOST: pgdatabase   # inside Docker, Postgres is reached by its service name
+    depends_on:
+      pgdatabase:
+        condition: service_healthy
+    restart: "no"
+
+volumes:
+  ny_taxi_postgres_data:
+  pgadmin_data:

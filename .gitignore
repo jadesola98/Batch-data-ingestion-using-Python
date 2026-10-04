@@ -1,0 +1,10 @@
+.env
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.csv
+*.csv.gz
+*.parquet
+ny_taxi_postgres_data/
+*Zone.Identifier
